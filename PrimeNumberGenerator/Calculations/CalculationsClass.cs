@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PrimeNumberGenerator.Calculations
@@ -10,6 +8,7 @@ namespace PrimeNumberGenerator.Calculations
     {
         private int TotalCount = 0;
         private List<int> _PrimaNumbers = new List<int>();
+
         public CalculationsClass(int _TotalCount)
         {
             TotalCount = _TotalCount;
@@ -20,44 +19,39 @@ namespace PrimeNumberGenerator.Calculations
             get { return _PrimaNumbers; }
         }
 
-        public async Task CalculateAsync ()
+        public async Task CalculateAsync()
         {
             if (TotalCount == 0)
             {
                 return;
             }
             await RunAll();
-            
         }
-        private async Task RunAll ()
+
+        private async Task RunAll()
         {
             List<Task> Tasks = new List<Task>();
-            int i = 0;
+            int i = 2;
             while (PrimeNumbers.Count < TotalCount)
             {
-
                 Tasks.Add(GetPrime(i));
                 i++;
             }
         }
+
         private async Task GetPrime(int iCurrent)
         {
-            
-                if (await WorkoutIfPrime(iCurrent))
-                {
-                    PrimeNumbers.Add(iCurrent);
-                }
-                       
+            if (await WorkoutIfPrime(iCurrent))
+            {
+                PrimeNumbers.Add(iCurrent);
+            }
         }
 
         private async Task<bool> WorkoutIfPrime(int Number)
         {
-            if (Number == 1 || Number == 0)
-            {
-                return false;
-            }
             if (Number == 2)
             {
+                Console.WriteLine(Number);
                 return true;
             }
             if (Number % 2 == 0)
@@ -71,6 +65,7 @@ namespace PrimeNumberGenerator.Calculations
                     return false;
                 }
             }
+            Console.WriteLine(Number);
             return true;
         }
     }
