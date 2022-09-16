@@ -16,10 +16,11 @@ namespace PrimeNumberGenerator
             CalculationsClass cs1 = new CalculationsClass(100);
             cs1.CalculateAsync();
             PrimeNumbers = cs1.PrimeNumbers;
+            int iCounter = 1;
             foreach(int i in PrimeNumbers)
             {
-                Console.WriteLine(i);
-
+                Console.WriteLine(i + ": "+ iCounter);
+                iCounter++;
             }
             Console.ReadKey();
         }

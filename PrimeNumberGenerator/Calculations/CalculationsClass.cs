@@ -33,7 +33,7 @@ namespace PrimeNumberGenerator.Calculations
         {
             List<Task> Tasks = new List<Task>();
             int i = 0;
-            while (PrimeNumbers.Count < 101)
+            while (PrimeNumbers.Count < TotalCount)
             {
 
                 Tasks.Add(GetPrime(i));
