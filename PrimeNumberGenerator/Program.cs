@@ -11,9 +11,14 @@ namespace PrimeNumberGenerator
     {
         private static void Main(string[] args)
         {
+            BuildList();
+        }
+
+        private static async void BuildList()
+        {
             List<int> PrimeNumbers = new List<int>();
             CalculationsClass cs1 = new CalculationsClass(100);
-            cs1.CalculateAsync();
+            await cs1.CalculateAsync();
             PrimeNumbers = cs1.PrimeNumbers;
             int iCounter = 1;
             foreach (int i in PrimeNumbers)

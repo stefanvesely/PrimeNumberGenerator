@@ -31,7 +31,8 @@ namespace PrimeNumberGenerator.Calculations
         private async Task RunAll()
         {
             List<Task> Tasks = new List<Task>();
-            int i = 2;
+            int i = 3;
+            PrimeNumbers.Add(2);
             while (PrimeNumbers.Count < TotalCount)
             {
                 Tasks.Add(GetPrime(i));
@@ -49,11 +50,6 @@ namespace PrimeNumberGenerator.Calculations
 
         private async Task<bool> WorkoutIfPrime(int Number)
         {
-            if (Number == 2)
-            {
-                Console.WriteLine(Number);
-                return true;
-            }
             if (Number % 2 == 0)
             {
                 return false;
@@ -65,7 +61,6 @@ namespace PrimeNumberGenerator.Calculations
                     return false;
                 }
             }
-            Console.WriteLine(Number);
             return true;
         }
     }
