@@ -42,13 +42,13 @@ namespace PrimeNumberGenerator.Calculations
 
         private async Task GetPrime(int iCurrent)
         {
-            if (await WorkoutIfPrime(iCurrent))
+            if (await Task.Run(() => WorkoutIfPrime(iCurrent)))
             {
                 PrimeNumbers.Add(iCurrent);
             }
         }
 
-        private async Task<bool> WorkoutIfPrime(int Number)
+        private bool WorkoutIfPrime(int Number)
         {
             if (Number % 2 == 0)
             {
@@ -61,6 +61,7 @@ namespace PrimeNumberGenerator.Calculations
                     return false;
                 }
             }
+            Console.WriteLine(Number);
             return true;
         }
     }

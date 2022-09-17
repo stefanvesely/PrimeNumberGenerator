@@ -17,7 +17,7 @@ namespace PrimeNumberGenerator
         private static async void BuildList()
         {
             List<int> PrimeNumbers = new List<int>();
-            CalculationsClass cs1 = new CalculationsClass(100);
+            CalculationsClass cs1 = new CalculationsClass(100000); //Change this number to Change amount of prime numbers.
             await cs1.CalculateAsync();
             PrimeNumbers = cs1.PrimeNumbers;
             int iCounter = 1;
