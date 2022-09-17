@@ -11,20 +11,16 @@ namespace PrimeNumberGenerator
     {
         private static void Main(string[] args)
         {
-            BuildList();
+            BuildList(100);//Change this number to Change amount of prime numbers.
         }
 
-        private static async void BuildList()
+        private static async void BuildList(int Total)
         {
-            List<int> PrimeNumbers = new List<int>();
-            CalculationsClass cs1 = new CalculationsClass(100000); //Change this number to Change amount of prime numbers.
-            await cs1.CalculateAsync();
-            PrimeNumbers = cs1.PrimeNumbers;
-            int iCounter = 1;
-            foreach (int i in PrimeNumbers)
+            CalculationsClass cs1 = new CalculationsClass(Total);
+            await cs1.CalculateAsync();          
+            for (int i = 0; i < Total; i++)
             {
-                Console.WriteLine(i + ": " + iCounter);
-                iCounter++;
+                Console.WriteLine(cs1.PrimeNumbers[i] + ": " + (i + 1).ToString());
             }
             Console.ReadKey();
         }
