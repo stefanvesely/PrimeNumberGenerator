@@ -54,11 +54,12 @@ namespace PrimeNumberGenerator.Calculations
 
         private bool WorkoutIfPrime(int Number) //prime calculations
         {
+            int NewNumber = Number / 2;
             if (Number % 2 == 0)
             {
                 return false;
             }
-            for (int i = 3; i < Number; i++)
+            for (int i = 3; i < NewNumber; i++)
             {
                 if (Number % i == 0)
                 {
