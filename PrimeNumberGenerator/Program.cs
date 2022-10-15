@@ -11,7 +11,7 @@ namespace PrimeNumberGenerator
     {
         private static void Main(string[] args)
         {
-            BuildList(100);//Change this number to Change amount of prime numbers.
+            BuildList(150000);//Change this number to Change amount of prime numbers.
         }
 
         private static async void BuildList(int Total)
